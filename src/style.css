@@ -1,23 +1,22 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .slideshow {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     background: #110101;
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
 }
 
-.slideshow .slider {
-    width: 100vw;
-    height: 100vw;
-    overflow: hidden;
-    z-index: 2;
-    transition: transform 0.8s ease;
-}
-
-.slideshow .slider .slide {
+.slideshow .slide {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -25,41 +24,41 @@
     transition: transform 1s ease-in-out;
 }
 
-.slideshow .slider .slide.left {
+.slideshow .slide.left {
     left: 0;
 }
 
-.slideshow .slider .slide.right {
+.slideshow .slide.right {
     right: 0;
 }
 
-.slideshow .slider .slide.active {
+.slideshow .slide.active {
     top: 50%;
     transform: translateY(-50%);
     display: flex;
 }
 
-.slideshow .slider .slide.right.previous {
+.slideshow .slide.right.previous {
     transform: translateY(-150%);
     display: flex;
 }
 
-.slideshow .slider .slide.right.next {
+.slideshow .slide.right.next {
     transform: translateY(50%);
     display: flex;
 }
 
-.slideshow .slider .slide.left.previous {
+.slideshow .slide.left.previous {
     transform: translateY(50%);
     display: flex;
 }
 
-.slideshow .slider .slide.left.next {
+.slideshow .slide.left.next {
     transform: translateY(-150%);
     display: flex;
 }
 
-.slideshow .slider .item {
+.slideshow .item {
     height: 100vh;
     width: 50vw;
     position: relative;
@@ -67,7 +66,7 @@
     border: none;
 }
 
-.slideshow .slider .item img {
+.slideshow .item img {
     width: 200%;
     /* min-height: 100%; */
     position: absolute;
@@ -75,14 +74,13 @@
     transform: translateY(-50%);
 }
 
-.slideshow .slider .left img {
+.slideshow .left img {
     left: 0;
 }
 
-.slideshow .slider .right img {
+.slideshow .right img {
     right: 0;
 }
-
 
 .slideshow-text {
     position: absolute;

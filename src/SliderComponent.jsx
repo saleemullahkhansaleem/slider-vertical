@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import "./style.css";
 
@@ -45,13 +45,33 @@ const SliderComponent = () => {
     setActiveIndex(index);
   };
 
+  useEffect(() => {
+    const preventScroll = (event) => {
+      event.preventDefault();
+    };
+
+    if (activeIndex < slides.length - 1) {
+      document.body.addEventListener("wheel", preventScroll, {
+        passive: false,
+      });
+    }
+
+    return () => {
+      document.body.removeEventListener("wheel", preventScroll);
+    };
+  }, [activeIndex]);
+
   const handleWheel = (event) => {
     if (isTransitioning) return;
 
     if (event.deltaY < 0) {
-      prevSlide();
+      if (activeIndex > 0) {
+        prevSlide();
+      }
     } else {
-      nextSlide();
+      if (activeIndex < slides.length - 1) {
+        nextSlide();
+      }
     }
 
     setIsTransitioning(true);
@@ -61,58 +81,56 @@ const SliderComponent = () => {
   return (
     <div className="slider-container" onWheel={handleWheel}>
       <div className="slideshow">
-        <div className="slider">
-          {slides.map((slide, index) => (
-            <div key={index}>
-              <div
-                className={`slide left ${
-                  index === activeIndex ||
-                  index === activeIndex - 1 ||
-                  (index === slides.length - 1 && activeIndex === 0)
-                    ? "active"
-                    : ""
-                } ${
-                  index === activeIndex - 1 ||
-                  (index === slides.length - 1 && activeIndex === 0)
-                    ? "previous"
-                    : ""
-                } ${
-                  index === activeIndex + 1 ||
-                  (index === 0 && activeIndex === slides.length - 1)
-                    ? "next"
-                    : ""
-                }`}
-              >
-                <div className="item">
-                  <img src={slide.image} alt={`Slide ${index}`} />
-                </div>
-              </div>
-              <div
-                className={`slide right ${
-                  index === activeIndex ||
-                  index === activeIndex - 1 ||
-                  (index === slides.length - 1 && activeIndex === 0)
-                    ? "active"
-                    : ""
-                } ${
-                  index === activeIndex - 1 ||
-                  (index === slides.length - 1 && activeIndex === 0)
-                    ? "previous"
-                    : ""
-                } ${
-                  index === activeIndex + 1 ||
-                  (index === 0 && activeIndex === slides.length - 1)
-                    ? "next"
-                    : ""
-                }`}
-              >
-                <div className="item">
-                  <img src={slide.image} alt={`Slide ${index}`} />
-                </div>
+        {slides.map((slide, index) => (
+          <div key={index}>
+            <div
+              className={`slide left ${
+                index === activeIndex ||
+                index === activeIndex - 1 ||
+                (index === slides.length - 1 && activeIndex === 0)
+                  ? "active"
+                  : ""
+              } ${
+                index === activeIndex - 1 ||
+                (index === slides.length - 1 && activeIndex === 0)
+                  ? "previous"
+                  : ""
+              } ${
+                index === activeIndex + 1 ||
+                (index === 0 && activeIndex === slides.length - 1)
+                  ? "next"
+                  : ""
+              }`}
+            >
+              <div className="item">
+                <img src={slide.image} alt={`Slide ${index}`} />
               </div>
             </div>
-          ))}
-        </div>
+            <div
+              className={`slide right ${
+                index === activeIndex ||
+                index === activeIndex - 1 ||
+                (index === slides.length - 1 && activeIndex === 0)
+                  ? "active"
+                  : ""
+              } ${
+                index === activeIndex - 1 ||
+                (index === slides.length - 1 && activeIndex === 0)
+                  ? "previous"
+                  : ""
+              } ${
+                index === activeIndex + 1 ||
+                (index === 0 && activeIndex === slides.length - 1)
+                  ? "next"
+                  : ""
+              }`}
+            >
+              <div className="item">
+                <img src={slide.image} alt={`Slide ${index}`} />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       <div className="slideshow-text">
         {slides.map((slide, index) => (
