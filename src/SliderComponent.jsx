@@ -7,21 +7,29 @@ const slides = [
     image:
       "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-2.jpg",
     text: "Canyon",
+    description:
+      "Out Patient Department (OPD) at Reliance Hospital is a witness to the hospital\u2019s popularity among those seeking expert opinion and medical treatment. Along with appropriate treatment of the patients we also focus on privacy & dignity, communication, cleanliness, comfort and personal attention.",
   },
   {
     image:
       "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg",
     text: "Desert",
+    description:
+      "2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
     image:
       "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg",
     text: "Erosion",
+    description:
+      "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
     image:
       "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg",
     text: "Shape",
+    description:
+      "4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
 ];
 
@@ -132,26 +140,32 @@ const SliderComponent = () => {
           </div>
         ))}
       </div>
-      <div className="slideshow-text">
-        {slides.map((slide, index) => (
-          <div
-            className={`item ${index === activeIndex ? "active" : ""} ${
-              index === activeIndex - 1 ||
-              (index === slides.length - 1 && activeIndex === 0)
-                ? "previous"
-                : ""
-            } ${
-              index === activeIndex + 1 ||
-              (index === 0 && activeIndex === slides.length - 1)
-                ? "next"
-                : ""
-            }`}
-            key={index}
-          >
-            {slide.text}
+      {slides.map((slide, index) => (
+        <div className="slideshow-text" key={index}>
+          <div className="item">
+            <h1
+              className={`${index === activeIndex ? "active" : ""} ${
+                index === activeIndex - 1 ||
+                (index === slides.length - 1 && activeIndex === 0)
+                  ? "previous"
+                  : ""
+              } ${
+                index === activeIndex + 1 ||
+                (index === 0 && activeIndex === slides.length - 1)
+                  ? "next"
+                  : ""
+              }`}
+            >
+              {slide.text}
+            </h1>
           </div>
-        ))}
-      </div>
+          <div
+            className={`description ${index === activeIndex ? "active" : ""}`}
+          >
+            <p>{slide.description}</p>
+          </div>
+        </div>
+      ))}
       <div className="dots">
         {slides.map((slide, index) => (
           <div
