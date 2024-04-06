@@ -4,29 +4,25 @@ import "./style.css";
 
 const slides = [
   {
-    image:
-      "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-2.jpg",
+    image: "slide-1.jpg",
     text: "Canyon",
     description:
-      "Out Patient Department (OPD) at Reliance Hospital is a witness to the hospital\u2019s popularity among those seeking expert opinion and medical treatment. Along with appropriate treatment of the patients we also focus on privacy & dignity, communication, cleanliness, comfort and personal attention.",
+      "1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
-    image:
-      "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg",
+    image: "slide-2.jpg",
     text: "Desert",
     description:
       "2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
-    image:
-      "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg",
+    image: "slide-3.jpg",
     text: "Erosion",
     description:
       "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
-    image:
-      "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg",
+    image: "slide-4.jpg",
     text: "Shape",
     description:
       "4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
@@ -111,6 +107,7 @@ const SliderComponent = () => {
               }`}
             >
               <div className="item">
+                <div className="img-box"></div>
                 <img src={slide.image} alt={`Slide ${index}`} />
               </div>
             </div>
@@ -134,6 +131,7 @@ const SliderComponent = () => {
               }`}
             >
               <div className="item">
+                <div className="img-box"></div>
                 <img src={slide.image} alt={`Slide ${index}`} />
               </div>
             </div>

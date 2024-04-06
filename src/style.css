@@ -66,6 +66,14 @@
     border: none;
 }
 
+.slideshow .item .img-box {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: #00000050;
+}
+
 .slideshow .item img {
     width: 200%;
     /* min-height: 100%; */
