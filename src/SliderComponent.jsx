@@ -4,25 +4,25 @@ import "./style.css";
 
 const slides = [
   {
-    image: "slide-1.jpg",
+    image: "slide-1.webp",
     text: "Canyon",
     description:
       "1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
-    image: "slide-2.jpg",
+    image: "slide-2.webp",
     text: "Desert",
     description:
       "2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
-    image: "slide-3.jpg",
+    image: "slide-3.webp",
     text: "Erosion",
     description:
       "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
   },
   {
-    image: "slide-4.jpg",
+    image: "slide-4.webp",
     text: "Shape",
     description:
       "4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat nisi adipisci libero tempora cupiditate facere assumenda eius voluptatum? Dicta numquam iste modi amet ut.",
