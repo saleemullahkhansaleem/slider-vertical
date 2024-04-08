@@ -202,7 +202,7 @@
 }
 
 @media (max-width: 767px) {
-    .slideshow-text {
+    .slideshow-text .item h1 {
         font-size: 40px;
         height: 32px;
     }

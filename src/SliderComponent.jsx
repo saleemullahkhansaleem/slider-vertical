@@ -157,11 +157,11 @@ const SliderComponent = () => {
               {slide.text}
             </h1>
           </div>
-          <div
+          {/* <div
             className={`description ${index === activeIndex ? "active" : ""}`}
           >
             <p>{slide.description}</p>
-          </div>
+          </div> */}
         </div>
       ))}
       <div className="dots">
